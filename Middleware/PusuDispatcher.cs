@@ -22,7 +22,7 @@ namespace Pusu.MiddleWare
         {
             await httpContext.Response.WriteAsync(_greeting + ", dispatching middleware!\r\n");
             await httpContext.Response.WriteAsync("This request is a " + httpContext.Request.Method + "\r\n");
-            await httpContext.Response.WriteAsync("This request is a " + httpContext.Request.Path + "\r\n");
+            await httpContext.Response.WriteAsync("This path is a " + httpContext.Request.Path + "\r\n");
         }
     }
 }
