@@ -35,12 +35,14 @@ namespace Pusu
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
-
+            // ajoute un httphandler version aspnet core
+            app.UseMiddleware(typeof(MiddleWare.PusuDispatcher), "Yo pousou");
             app.UseIISPlatformHandler();
 
             app.UseStaticFiles();
 
             app.UseMvc();
+            
         }
 
         // Entry point for the application.
